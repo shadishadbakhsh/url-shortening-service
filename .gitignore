@@ -1,26 +1,46 @@
 # ========================
 # React / Node.js
 # ========================
-frontend/node_modules
-frontend/build
-frontend/.env
+Frontend/node_modules/
+Frontend/build/
+Frontend/.env
+Frontend/.parcel-cache/
+Frontend/.next/
+Frontend/dist/
 
 # ========================
 # .NET / C#
 # ========================
-backend/bin
-backend/obj
-backend/appsettings.Development.json
-backend/*.user
+Backend/bin/
+Backend/obj/
+Backend/*.user
+Backend/*.suo
+Backend/*.swp
+Backend/*.dbmdl
+Backend/*.jfm
+Backend/launchSettings.json  # auto-generated, contains machine-specific settings
+
+# Ignore appsettings.Development.json (local only)
+Backend/appsettings.Development.json
 
 # ========================
 # Logs
 # ========================
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # ========================
 # IDE / OS
 # ========================
 .vscode/
+.idea/
+*.sln.iml
 .DS_Store
 Thumbs.db
+
+# ========================
+# Git
+# ========================
+*.orig

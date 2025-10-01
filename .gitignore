@@ -19,7 +19,7 @@ Backend/*.swp
 Backend/*.dbmdl
 Backend/*.jfm
 Backend/launchSettings.json  # auto-generated, contains machine-specific settings
-
+Backend/.vs/
 # Ignore appsettings.Development.json (local only)
 Backend/appsettings.Development.json
 

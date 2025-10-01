@@ -7,7 +7,8 @@ Frontend/.env
 Frontend/.parcel-cache/
 Frontend/.next/
 Frontend/dist/
-
+Frontend/.vscode/
+Frontend/README.md
 # ========================
 # .NET / C#
 # ========================
@@ -20,6 +21,7 @@ Backend/*.dbmdl
 Backend/*.jfm
 Backend/launchSettings.json  # auto-generated, contains machine-specific settings
 Backend/.vs/
+Backend/URLShortening.csproj.user
 # Ignore appsettings.Development.json (local only)
 Backend/appsettings.Development.json
 

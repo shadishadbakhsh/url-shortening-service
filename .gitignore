@@ -1,0 +1,26 @@
+# ========================
+# React / Node.js
+# ========================
+frontend/node_modules
+frontend/build
+frontend/.env
+
+# ========================
+# .NET / C#
+# ========================
+backend/bin
+backend/obj
+backend/appsettings.Development.json
+backend/*.user
+
+# ========================
+# Logs
+# ========================
+*.log
+
+# ========================
+# IDE / OS
+# ========================
+.vscode/
+.DS_Store
+Thumbs.db

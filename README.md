@@ -104,9 +104,11 @@ or 404 Not Found
 
   ```cd Backend```
 
+
 2.Restore dependencies:
 
 ```dotnet restore```
+
 
 3.Update appsettings.json with your database connection string:
 

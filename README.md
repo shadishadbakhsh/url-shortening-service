@@ -1,26 +1,69 @@
-URL Shortening Service
+# URL Shortening Service
 
-A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend. Allows users to create short, shareable links, track usage, and manage URLs through a clean web interface.
+## A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend. 
 
-🚀 Features
+This Project allows users to create short, shareable links, track usage, and manage URLs through a clean web interface.
+* Shorten long URLs to simple short codes.
+* Retrieve the original URL using a short code.
+* Update existing shortened URLs.
+* Delete shortened URLs.
+* View statistics (click count, main URL) for each shortened URL.
+* Swagger documentation for backend APIs.
+* Simple frontend UI for user interaction.
 
-Shorten URLs: Convert long URLs into short, easy-to-share links.
+## API Endpoints
 
-Redirection: Short URLs redirect users to the original link.
+Shorten URL
 
-URL Management: Create, read, update, and delete URLs.
+```POST /shorten```
+Request:
+```json
+{
+  "originalUrl": "https://example.com"
+}
+```
+Response:
+```json
+{
+  "id": "1",
+  "url": "https://www.example.com/some/long/url",
+  "shortCode": "abc123",
+  "createdAt": "2021-09-01T12:00:00Z",
+  "updatedAt": "2021-09-01T12:00:00Z"
+}
+```
 
-Analytics: Track the number of clicks for each short URL.
+Retrieve Original URL
 
-Frontend: React-based user interface for managing URLs.
+```GET /shorten/{shortCode}```
 
-🛠️ Tech Stack
+Update URL
 
-Frontend: React, Material-UI 
+```PUT /shorten/{shortCode}```
 
-Backend: ASP.NET Core Web API (.NET 6/7)
+Delete Shortened URL
 
-Database: PostgreSQL 
+```DELETE /shorten/{shortCode}```
+
+Get URL Stats
+
+```GET /shorten/{shortCode}/stats```
+Response:
+```json
+{
+  "id": "1",
+  "url": "https://www.example.com/some/long/url",
+  "shortCode": "abc123",
+  "createdAt": "2021-09-01T12:00:00Z",
+  "updatedAt": "2021-09-01T12:00:00Z",
+  "accessCount": 10
+}
+```
+
+
+
+
+
 
 📦 Installation & Setup
 1️⃣ Backend (ASP.NET Core Web API)

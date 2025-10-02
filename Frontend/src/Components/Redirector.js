@@ -213,7 +213,7 @@ function Redirector() {
             onClick={handleStaticsSubmit}
             sx={{ flex: 1 }}
           >
-            URL Statics
+            URL Stats
           </Button>
           <Button
             variant="contained"

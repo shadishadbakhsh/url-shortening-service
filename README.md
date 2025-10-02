@@ -1,8 +1,11 @@
 # URL Shortening Service
 
-## A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend. 
+## A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend
 
-This Project allows users to create short, shareable links, track usage, and manage URLs through a clean web interface.
+This project allows users to create short, shareable links, track usage, and manage URLs through a clean web interface.
+
+**Features:**
+
 * Shorten long URLs to simple short codes.
 * Retrieve the original URL using a short code.
 * Update existing shortened URLs.
@@ -11,148 +14,179 @@ This Project allows users to create short, shareable links, track usage, and man
 * Swagger documentation for backend APIs.
 * Simple frontend UI for user interaction.
 
+---
+
 ## API Endpoints
 
-**Shorten URL:**
+### Shorten URL
 
-  ```POST /shorten```
+```http
+POST /shorten
+```
 
-  Request:
+**Request:**
 
-      ```json
-      {
-      "originalUrl": "https://example.com"
-      }
-      ```
-  Response:
+```json
+{
+  "originalUrl": "https://example.com"
+}
+```
 
-  200 status code
-  
-    ```json
-    {
-    "id": "1",
-    "url": "https://www.example.com/some/long/url",
-   "shortCode": "abc123",
-   "createdAt": "2021-09-01T12:00:00Z",
-   "updatedAt": "2021-09-01T12:00:00Z"
-    }
-    ```
+**Response:** 200 OK
 
-**Retrieve Original URL:**
+```json
+{
+  "id": "1",
+  "url": "https://www.example.com/some/long/url",
+  "shortCode": "abc123",
+  "createdAt": "2021-09-01T12:00:00Z",
+  "updatedAt": "2021-09-01T12:00:00Z"
+}
+```
 
-  ```GET /shorten/{shortCode}```
+---
 
-  Resposne:
+### Retrieve Original URL
 
-  200 status code or 404 Not Found 
+```http
+GET /shorten/{shortCode}
+```
 
-**Update URL:**
+**Response:** 200 OK with the URL data, or 404 Not Found.
 
-  ```PUT /shorten/{shortCode}```
+---
 
-  Request Body:
+### Update URL
 
-    ```json
-    {
-      "url": "https://www.example.com/some/updated/url"
-    }
-    ```
-  Resposne:
+```http
+PUT /shorten/{shortCode}
+```
 
-  200 status code 
+**Request Body:**
 
-    ```json
-    {
-    "id": "1",
-    "url": "https://www.example.com/some/long/url",
-    "shortCode": "abc123",
-    "createdAt": "2021-09-01T12:00:00Z",
-    "updatedAt": "2021-09-01T12:00:00Z",
-    "accessCount": 0
-    } 
-    ```
-  or 404 Not Found 
+```json
+{
+  "url": "https://www.example.com/some/updated/url"
+}
+```
 
-**Delete Shortened URL:**
+**Response:** 200 OK
 
-  ```DELETE /shorten/{shortCode}```
+```json
+{
+  "id": "1",
+  "url": "https://www.example.com/some/updated/url",
+  "shortCode": "abc123",
+  "createdAt": "2021-09-01T12:00:00Z",
+  "updatedAt": "2021-09-01T12:00:00Z",
+  "accessCount": 0
+}
+```
 
-  Resposne:
+Or 404 Not Found if the short code does not exist.
 
-  200 status code or 404 Not Found 
+---
 
-**Get URL Stats:**
+### Delete Shortened URL
 
-  ```GET /shorten/{shortCode}/stats```  
+```http
+DELETE /shorten/{shortCode}
+```
 
-  Response:
+**Response:** 200 OK, or 404 Not Found.
 
-  200 Status code
+---
 
-    ```json
-    {
-    "id": "1",
-    "url": "https://www.example.com/some/long/url",
-    "shortCode": "abc123",
-    "createdAt": "2021-09-01T12:00:00Z",
-    "updatedAt": "2021-09-01T12:00:00Z",
-    "accessCount": 10
-   }
-   ```
-  or 404 Not Found
+### Get URL Stats
+
+```http
+GET /shorten/{shortCode}/stats
+```
+
+**Response:** 200 OK
+
+```json
+{
+  "id": "1",
+  "url": "https://www.example.com/some/long/url",
+  "shortCode": "abc123",
+  "createdAt": "2021-09-01T12:00:00Z",
+  "updatedAt": "2021-09-01T12:00:00Z",
+  "accessCount": 10
+}
+```
+
+Or 404 Not Found if the short code does not exist.
+
+---
 
 ## Installation & Setup
-**Backend (ASP.NET Core Web API)**
+
+### Backend (ASP.NET Core Web API)
 
 1. Navigate to the backend folder:
-    ```bash 
-    cd Backend
-    ```
+
+   ```bash
+   cd Backend
+   ```
 
 2. Restore dependencies:
-    ```bash
-    dotnet restore
-    ```
+
+   ```bash
+   dotnet restore
+   ```
+
 3. Update `appsettings.json` with your database connection string:
-    ```json
-    "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}
-    ```
+
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "YourDatabaseConnectionString"
+     }
+   }
+   ```
 
 4. Run migrations:
-    ```bash
-    dotnet ef database update
-    ```
+
+   ```bash
+   dotnet ef database update
+   ```
 
 5. Start the API:
-    ```bash
-    dotnet run
-    ```
 
-*API will run at https://localhost:7060* 
+   ```bash
+   dotnet run
+   ```
 
-**Frontend (React)**
+*The API will run at [https://localhost:7060](https://localhost:7060)*
+
+---
+
+### Frontend (React)
 
 1. Navigate to the frontend folder:
-    ```bash
-    cd Frontend
-    ```
+
+   ```bash
+   cd Frontend
+   ```
 
 2. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 3. Make sure the backend URL is correctly configured:
-    If you are using the proxy field in `package.json`, check that it matches your backend URL.
-    ```json
-    "proxy": "https://localhost:7060"
-    ```
+   If you are using the `proxy` field in `package.json`, check that it matches your backend URL.
 
+   ```json
+   "proxy": "https://localhost:7060"
+   ```
 
 4. Start the frontend:
-    ```bash
-    npm start
-    ```
 
-*React app will run at http://localhost:3000.*
+   ```bash
+   npm start
+   ```
 
+*The React app will run at [http://localhost:3000](http://localhost:3000)*

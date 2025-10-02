@@ -19,11 +19,11 @@ This Project allows users to create short, shareable links, track usage, and man
 
   Request:
 
-    ```json
-    {
-    "originalUrl": "https://example.com"
-   }
-    ```
+      ```json
+      {
+      "originalUrl": "https://example.com"
+      }
+      ```
   Response:
 
   200 status code

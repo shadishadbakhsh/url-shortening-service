@@ -110,53 +110,46 @@ or 404 Not Found
     dotnet restore
     ```
 3. Update `appsettings.json` with your database connection string:
-
-```json
- "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}
- ```
+    ```json
+    "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}
+    ```
 
 4. Run migrations:
-
-```bash
-dotnet ef database update
-```
+    ```bash
+    dotnet ef database update
+    ```
 
 5. Start the API:
-
-```bash
-dotnet run
-```
+    ```bash
+    dotnet run
+    ```
 
 *API will run at https://localhost:7060* 
 
 **Frontend (React)**
 
 1. Navigate to the frontend folder:
-
-```bash
-cd Frontend
-```
+    ```bash
+    cd Frontend
+    ```
 
 2. Install dependencies:
-
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 3. Make sure the backend URL is correctly configured:
 
 If you are using the proxy field in `package.json`, check that it matches your backend URL.
-
- ```json
-  "proxy": "https://localhost:7060"
-  ```
+    ```json
+    "proxy": "https://localhost:7060"
+    ```
 
 
 4. Start the frontend:
-
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
 
 *React app will run at http://localhost:3000.*
 

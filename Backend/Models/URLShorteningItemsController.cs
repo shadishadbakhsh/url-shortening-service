@@ -61,21 +61,22 @@ namespace URLShortening.Models
 
         }
 
-        // PUT: api/URLShorteningItems/5
+        // PUT: api/URLShorteningItems/{shortCode}
         [HttpPut("{shortCode}")]
-        public async Task<IActionResult> PutURLShorteningItem(string shortCode, URLShorteningItem Item)
+        public async Task<IActionResult> PutURLShorteningItem(string shortCode, [FromBody] URLShorteningDTO dto)
         {
-            if (string.IsNullOrWhiteSpace(shortCode) || Item == null)
+            if (string.IsNullOrWhiteSpace(shortCode) || dto == null || string.IsNullOrWhiteSpace(dto.url))
             {
                 return BadRequest();
             }
 
             var existingItem = await _context.URLShorteningItems
                 .FirstOrDefaultAsync(x => x.shortCode == shortCode);
+
             if (existingItem == null)
                 return NotFound();
-
-            existingItem.url = Item.url;
+           
+            existingItem.url = dto.url;
             existingItem.updatedAt = DateTime.UtcNow.ToString("o");
 
             try
@@ -90,7 +91,7 @@ namespace URLShortening.Models
                     throw;
             }
 
-            return NoContent();
+            return Ok(existingItem);
         }
 
         // POST: api/URLShorteningItems

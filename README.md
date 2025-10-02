@@ -13,7 +13,7 @@ This Project allows users to create short, shareable links, track usage, and man
 
 ## API Endpoints
 
-Shorten URL:
+**Shorten URL:**
 
 ```POST /shorten```
 
@@ -34,20 +34,47 @@ Response:
 }
 ```
 
-Retrieve Original URL:
+**Retrieve Original URL:**
 
 ```GET /shorten/{shortCode}```
 
-Update URL:
+Request Parameter: ```shortCode```
+
+**Update URL:**
 
 ```PUT /shorten/{shortCode}```
 
+Request Parameter: ```shortCode```
+
+Request Body:
+
+```json
+{
+  "url": "https://www.example.com/some/updated/url"
+}
+```
+
 Resposne:
-200 status code or 404 Not Found 
+200 status code 
+
+```json
+{
+  "id": "1",
+  "url": "https://www.example.com/some/long/url",
+  "shortCode": "abc123",
+  "createdAt": "2021-09-01T12:00:00Z",
+  "updatedAt": "2021-09-01T12:00:00Z",
+  "accessCount": 0
+}
+```
+
+or 404 Not Found 
 
 Delete Shortened URL:
 
 ```DELETE /shorten/{shortCode}```
+
+Request Parameter: ```shortCode```
 
 Resposne:
 200 status code or 404 Not Found 
@@ -55,6 +82,8 @@ Resposne:
 Get URL Stats:
 
 ```GET /shorten/{shortCode}/stats```
+
+Request Parameter: ```shortCode```
 
 Response:
 

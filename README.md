@@ -15,87 +15,79 @@ This Project allows users to create short, shareable links, track usage, and man
 
 **Shorten URL:**
 
-```POST /shorten```
+  ```POST /shorten```
 
-Request:
-```json
-{
-  "originalUrl": "https://example.com"
-}
-```
-Response:
-200 status code
-
-```json
-{
-  "id": "1",
-  "url": "https://www.example.com/some/long/url",
-  "shortCode": "abc123",
-  "createdAt": "2021-09-01T12:00:00Z",
-  "updatedAt": "2021-09-01T12:00:00Z"
-}
-```
+  Request:
+    ```json
+    {
+    "originalUrl": "https://example.com"
+   }
+    ```
+  Response:
+  200 status code
+    ```json
+    {
+    "id": "1",
+    "url": "https://www.example.com/some/long/url",
+   "shortCode": "abc123",
+   "createdAt": "2021-09-01T12:00:00Z",
+   "updatedAt": "2021-09-01T12:00:00Z"
+    }
+    ```
 
 **Retrieve Original URL:**
 
-```GET /shorten/{shortCode}```
+  ```GET /shorten/{shortCode}```
 
-Resposne:
-200 status code or 404 Not Found 
+  Resposne:
+  200 status code or 404 Not Found 
 
 **Update URL:**
 
-```PUT /shorten/{shortCode}```
+  ```PUT /shorten/{shortCode}```
 
-Request Body:
-
-```json
-{
-  "url": "https://www.example.com/some/updated/url"
-}
-```
-
-Resposne:
-200 status code 
-
-```json
-{
-  "id": "1",
-  "url": "https://www.example.com/some/long/url",
-  "shortCode": "abc123",
-  "createdAt": "2021-09-01T12:00:00Z",
-  "updatedAt": "2021-09-01T12:00:00Z",
-  "accessCount": 0
-}
-```
-
-or 404 Not Found 
+  Request Body:
+    ```json
+    {
+      "url": "https://www.example.com/some/updated/url"
+    }
+    ```
+  Resposne:
+  200 status code   
+    ```json
+    {
+    "id": "1",
+    "url": "https://www.example.com/some/long/url",
+    "shortCode": "abc123",
+    "createdAt": "2021-09-01T12:00:00Z",
+    "updatedAt": "2021-09-01T12:00:00Z",
+    "accessCount": 0
+    } 
+    ```
+  or 404 Not Found 
 
 **Delete Shortened URL:**
 
-```DELETE /shorten/{shortCode}```
-
-Resposne:
-200 status code or 404 Not Found 
+  ```DELETE /shorten/{shortCode}```
+  Resposne:
+  200 status code or 404 Not Found 
 
 **Get URL Stats:**
 
-```GET /shorten/{shortCode}/stats```
-
-Response:
-
-200 Status code
-```json
-{
-  "id": "1",
-  "url": "https://www.example.com/some/long/url",
-  "shortCode": "abc123",
-  "createdAt": "2021-09-01T12:00:00Z",
-  "updatedAt": "2021-09-01T12:00:00Z",
-  "accessCount": 10
-}
-```
-or 404 Not Found
+  ```GET /shorten/{shortCode}/stats```  
+  Response:
+  200 Status code
+    ```json
+    {
+    "id": "1",
+    "url": "https://www.example.com/some/long/url",
+    "shortCode": "abc123",
+    "createdAt": "2021-09-01T12:00:00Z",
+    "updatedAt": "2021-09-01T12:00:00Z",
+    "accessCount": 10
+   }
+   ```
+  or 404 Not Found
 
 ## Installation & Setup
 **Backend (ASP.NET Core Web API)**
@@ -139,8 +131,7 @@ or 404 Not Found
     ```
 
 3. Make sure the backend URL is correctly configured:
-
-If you are using the proxy field in `package.json`, check that it matches your backend URL.
+    If you are using the proxy field in `package.json`, check that it matches your backend URL.
     ```json
     "proxy": "https://localhost:7060"
     ```

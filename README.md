@@ -97,20 +97,17 @@ Response:
 ```
 or 404 Not Found
 
-# Installation & Setup
+## Installation & Setup
 **Backend (ASP.NET Core Web API)**
 
-1.Navigate to the backend folder:
+1. Navigate to the backend folder:
+    ```bash cd Backend```
 
-  ```cd Backend```
-
-
-2.Restore dependencies:
-
-```dotnet restore```
-
-
-3.Update appsettings.json with your database connection string:
+2. Restore dependencies:
+    ```bash
+    dotnet restore
+    ```
+3. Update appsettings.json with your database connection string:
 
 ``` "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}```
 

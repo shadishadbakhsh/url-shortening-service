@@ -101,46 +101,62 @@ or 404 Not Found
 **Backend (ASP.NET Core Web API)**
 
 1. Navigate to the backend folder:
-    ```bash cd Backend```
+    ```bash 
+    cd Backend
+    ```
 
 2. Restore dependencies:
     ```bash
     dotnet restore
     ```
-3. Update appsettings.json with your database connection string:
+3. Update `appsettings.json` with your database connection string:
 
-``` "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}```
+```json
+ "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}
+ ```
 
-4.Run migrations:
+4. Run migrations:
 
-```dotnet ef database update```
+```bash
+dotnet ef database update
+```
 
-5.Start the API:
+5. Start the API:
 
-```dotnet run```
+```bash
+dotnet run
+```
 
-API will run at https://localhost:7060 
+*API will run at https://localhost:7060* 
 
 **Frontend (React)**
 
-1.Navigate to the frontend folder:
+1. Navigate to the frontend folder:
 
-```cd Frontend```
+```bash
+cd Frontend
+```
 
-2.Install dependencies:
+2. Install dependencies:
 
-```npm install```
+```bash
+npm install
+```
 
-3.Make sure the backend URL is correctly configured:
+3. Make sure the backend URL is correctly configured:
 
-If you are using the proxy field in package.json, check that it matches your backend URL.
+If you are using the proxy field in `package.json`, check that it matches your backend URL.
 
- ``` "proxy": "https://localhost:7060"```
+ ```json
+  "proxy": "https://localhost:7060"
+  ```
 
 
-4.Start the frontend:
+4. Start the frontend:
 
-```npm start```
+```bash
+npm start
+```
 
-React app will run at http://localhost:3000.
+*React app will run at http://localhost:3000.*
 

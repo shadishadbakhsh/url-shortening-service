@@ -1,4 +1,4 @@
-URL Shortening Service
+# URL Shortening Service
 
 ## A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend. 
 
@@ -13,9 +13,10 @@ This Project allows users to create short, shareable links, track usage, and man
 
 ## API Endpoints
 
-Shorten URL
+Shorten URL:
 
 ```POST /shorten```
+
 Request:
 ```json
 {
@@ -33,22 +34,31 @@ Response:
 }
 ```
 
-Retrieve Original URL
+Retrieve Original URL:
 
 ```GET /shorten/{shortCode}```
 
-Update URL
+Update URL:
 
 ```PUT /shorten/{shortCode}```
 
-Delete Shortened URL
+Resposne:
+200 status code or 404 Not Found 
+
+Delete Shortened URL:
 
 ```DELETE /shorten/{shortCode}```
 
-Get URL Stats
+Resposne:
+200 status code or 404 Not Found 
+
+Get URL Stats:
 
 ```GET /shorten/{shortCode}/stats```
+
 Response:
+
+200 Status code
 ```json
 {
   "id": "1",
@@ -59,14 +69,14 @@ Response:
   "accessCount": 10
 }
 ```
+or 404 Not Found
 
 
 
 
 
-
-📦 Installation & Setup
-1️⃣ Backend (ASP.NET Core Web API)
+# Installation & Setup
+1. Backend (ASP.NET Core Web API)
 
 Navigate to the backend folder:
 
@@ -97,7 +107,7 @@ dotnet run
 
 API will run at https://localhost:7060 
 
-2️⃣ Frontend (React)
+2. Frontend (React)
 
 Navigate to the frontend folder:
 

@@ -40,6 +40,7 @@ This Project allows users to create short, shareable links, track usage, and man
   ```GET /shorten/{shortCode}```
 
   Resposne:
+
   200 status code or 404 Not Found 
 
 **Update URL:**
@@ -47,13 +48,16 @@ This Project allows users to create short, shareable links, track usage, and man
   ```PUT /shorten/{shortCode}```
 
   Request Body:
+
     ```json
     {
       "url": "https://www.example.com/some/updated/url"
     }
     ```
   Resposne:
-  200 status code   
+
+  200 status code 
+
     ```json
     {
     "id": "1",
@@ -69,14 +73,19 @@ This Project allows users to create short, shareable links, track usage, and man
 **Delete Shortened URL:**
 
   ```DELETE /shorten/{shortCode}```
+
   Resposne:
+
   200 status code or 404 Not Found 
 
 **Get URL Stats:**
 
   ```GET /shorten/{shortCode}/stats```  
+
   Response:
+
   200 Status code
+  
     ```json
     {
     "id": "1",

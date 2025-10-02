@@ -18,13 +18,16 @@ This Project allows users to create short, shareable links, track usage, and man
   ```POST /shorten```
 
   Request:
+
     ```json
     {
     "originalUrl": "https://example.com"
    }
     ```
   Response:
+
   200 status code
+  
     ```json
     {
     "id": "1",
@@ -85,7 +88,7 @@ This Project allows users to create short, shareable links, track usage, and man
   Response:
 
   200 Status code
-  
+
     ```json
     {
     "id": "1",

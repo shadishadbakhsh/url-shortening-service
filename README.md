@@ -1,4 +1,4 @@
-URL Shortening Service
+##H2 URL Shortening Service
 
 A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend. Allows users to create short, shareable links, track usage, and manage URLs through a clean web interface.
 

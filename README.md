@@ -1,4 +1,4 @@
-# URL Shortening Service
+URL Shortening Service
 
 ## A full-stack URL Shortening Service with a React frontend and ASP.NET Core Web API backend. 
 

@@ -24,6 +24,8 @@ Request:
 }
 ```
 Response:
+200 status code
+
 ```json
 {
   "id": "1",
@@ -38,13 +40,12 @@ Response:
 
 ```GET /shorten/{shortCode}```
 
-Request Parameter: ```shortCode```
+Resposne:
+200 status code or 404 Not Found 
 
 **Update URL:**
 
 ```PUT /shorten/{shortCode}```
-
-Request Parameter: ```shortCode```
 
 Request Body:
 
@@ -70,20 +71,16 @@ Resposne:
 
 or 404 Not Found 
 
-Delete Shortened URL:
+**Delete Shortened URL:**
 
 ```DELETE /shorten/{shortCode}```
-
-Request Parameter: ```shortCode```
 
 Resposne:
 200 status code or 404 Not Found 
 
-Get URL Stats:
+**Get URL Stats:**
 
 ```GET /shorten/{shortCode}/stats```
-
-Request Parameter: ```shortCode```
 
 Response:
 
@@ -100,65 +97,51 @@ Response:
 ```
 or 404 Not Found
 
-
-
-
-
 # Installation & Setup
-1. Backend (ASP.NET Core Web API)
+**Backend (ASP.NET Core Web API)**
 
-Navigate to the backend folder:
+1.Navigate to the backend folder:
 
-cd Backend
+```cd Backend```
 
+2.Restore dependencies:
 
-Restore dependencies:
+```dotnet restore```
 
-dotnet restore
+3.Update appsettings.json with your database connection string:
 
+``` "ConnectionStrings": {"DefaultConnection": "YourDatabaseConnectionString"}```
 
-Update appsettings.json with your database connection string:
+4.Run migrations:
 
-"ConnectionStrings": {
-  "DefaultConnection": "YourDatabaseConnectionString"
-}
+```dotnet ef database update```
 
+5.Start the API:
 
-Run migrations:
-
-dotnet ef database update
-
-
-Start the API:
-
-dotnet run
-
+```dotnet run```
 
 API will run at https://localhost:7060 
 
-2. Frontend (React)
+**Frontend (React)**
 
-Navigate to the frontend folder:
+1.Navigate to the frontend folder:
 
-cd Frontend
+```cd Frontend```
 
+2.Install dependencies:
 
-Install dependencies:
+```npm install```
 
-npm install
-
-
-Make sure the backend URL is correctly configured:
+3.Make sure the backend URL is correctly configured:
 
 If you are using the proxy field in package.json, check that it matches your backend URL.
 
-  "proxy": "https://localhost:7060"
+ ``` "proxy": "https://localhost:7060"```
 
 
-Start the frontend:
+4.Start the frontend:
 
-npm start
-
+```npm start```
 
 React app will run at http://localhost:3000.
 

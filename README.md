@@ -190,3 +190,9 @@ Or 404 Not Found if the short code does not exist.
    ```
 
 *The React app will run at [http://localhost:3000](http://localhost:3000)*
+
+---
+
+## Source
+
+This project idea comes from [roadmap.sh - URL Shortening Service Project](https://roadmap.sh/projects/url-shortening-service)
